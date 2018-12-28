@@ -7,3 +7,24 @@ hr {
         border-top-width: 18px;
     border-top: 100px solid rgba(0,0,0,.1);
 }
+
+.dahira-box{
+    box-shadow: none !important;
+    background: #fff !important;
+}
+
+// .mat-tab-label.mat-tab-label-active {
+//     background-color: #f0f0f0 !important;
+//     color: #333 !important;
+//   }
+.tab-border {
+    margin-top: 10px;
+    border: 3px solid #e8e8e8;
+    min-height: 450px !important;
+}
+
+.mat-card-header {
+    display: flex;
+    flex-direction: row;
+    border-bottom: 1px solid #e8e8e8;
+}

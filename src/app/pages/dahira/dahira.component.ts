@@ -12,4 +12,10 @@ export class DahiraComponent implements OnInit {
   ngOnInit() {
   }
 
+
+  tabSelected(event) {
+    console.log(event);
+
+
+  }
 }

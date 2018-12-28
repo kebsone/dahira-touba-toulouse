@@ -1,6 +1,80 @@
 /* You can add global styles to this file, and also import other style files */
 @import "~bootstrap/dist/css/bootstrap.min.css";
+$dahira-green:#1A8278;
+$default-text:#666;
+body {
+    font-family: Roboto, Arial, sans-serif;
+    background-color: #dde9f3;
+    color: $default-text;
+    font-size: 14px;
+    text-align: justify;
+}
+.mat-card {
+    transition:  none; // box-shadow 280ms cubic-bezier(.4,0,.2,1);
+    display: block;
+    position: relative;
+    padding: 16px;
+   border-radius: 4px;
+    box-shadow: none !important;
+    background-color: #fff;
+}
 
-// body {
-//     background-color: #dde9f3;
-// }
+.mat-expansion-panel {
+    box-sizing: content-box;
+    display: block;
+    margin: 0;
+    border-radius: 4px;
+    overflow: hidden;
+    transition:   margin 225ms cubic-bezier(.4,0,.2,1),box-shadow 280ms cubic-bezier(.4,0,.2,1);
+    background-color: #fff;
+    margin-top: 24px !important;
+    min-height: 500px;
+}
+
+.mat-expansion-panel-header {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 0 24px;
+    border-radius: inherit;
+    background-color: #e9ecef61;
+}
+
+.mat-tab-header, .mat-tab-nav-bar {
+    border-bottom: 1px solid rgba(0,0,0,.12);
+}
+
+.mat-tab-label.mat-tab-label-active {
+    background-color: #f0f0f0 !important;
+    color: #333 !important;
+    border-bottom: 2px solid $dahira-green;
+   
+}
+
+.mat-tab-labels {
+    display: flex;
+    transition: none !important;
+}
+
+.mat-tab {
+    padding: 24px;
+}
+
+.mat-tab-list {
+    flex-grow: 1;
+    position: relative;
+    transition: none !important;
+}
+
+.mat-tab-body-content {
+    height: 100%;
+    overflow: auto;
+    padding-top: 14px;
+    padding-bottom:24px;
+    padding-left:24px;
+    padding-right:24px;
+}
+
+
+
+
