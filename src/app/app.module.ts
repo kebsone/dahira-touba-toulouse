@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 import {MatExpansionModule} from '@angular/material/expansion';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {MatTabsModule} from '@angular/material/tabs';
-import { MatBadgeModule } from '@angular/material';
+import { MatBadgeModule, MatToolbarModule, MatMenuModule } from '@angular/material';
 import { MatSortModule, MatTableModule, MatTooltipModule } from '@angular/material/';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { MatButtonModule } from '@angular/material/button';
@@ -33,6 +33,9 @@ import { CommerceComponent } from './pages/commerce/commerce.component';
 import { ContactComponent } from './pages/contact/contact.component';
 import { AccueilComponent } from './pages/accueil/accueil.component';
 import { LoginComponent } from './pages/login/login.component';
+import { KhalifComponent } from './khalif/khalif.component';
+import { PreHeaderComponent } from './pre-header/pre-header.component';
+
 
 
 const routes: Routes = [
@@ -44,6 +47,8 @@ const routes: Routes = [
   { path: 'membre', component: MembreComponent },
   { path: 'commerce', component: CommerceComponent },
   { path: 'contact', component: ContactComponent },
+  { path: 'login', component: LoginComponent}
+
 ];
 
 @NgModule({
@@ -58,7 +63,10 @@ const routes: Routes = [
     CommerceComponent,
     ContactComponent,
     AccueilComponent,
-    LoginComponent
+    LoginComponent,
+    KhalifComponent,
+    PreHeaderComponent
+  
   ],
   imports: [
     BrowserModule,
@@ -67,7 +75,24 @@ const routes: Routes = [
     MatCardModule,
     MatExpansionModule,
     BrowserAnimationsModule,
-    MatTabsModule
+    MatTabsModule,
+    MatIconModule,
+    MatToolbarModule,
+    MatMenuModule,
+    MatButtonToggleModule,
+    MatButtonModule,
+    MatFormFieldModule,
+    MatInputModule,
+    MatBadgeModule,
+    MatSnackBarModule,
+    MatPaginatorModule,
+    MatSlideToggleModule,
+    MatRadioModule,
+    MatSortModule, MatTableModule, MatTooltipModule,
+    MatAutocompleteModule,
+    MatCheckboxModule,
+    MatDatepickerModule,
+    MatDialogModule
   ],
   providers: [],
   bootstrap: [AppComponent]

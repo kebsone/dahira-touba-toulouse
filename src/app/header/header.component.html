@@ -1,10 +1,20 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-header">
+<mat-toolbar class="bg-header">
+<mat-toolbar-row >
   <a class="navbar-brand" href="#">Touba Toulouse</a>
-  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+  <button class="navbar-toggler" type="button"  data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
     <span class="navbar-toggler-icon"></span>
   </button>
-  <div class="collapse navbar-collapse" id="navbarNav">
-    <ul class="navbar-nav">
+  <div class="dahira-button-header"> 
+      <button mat-button routerLink="/dahira">Dahira</button>
+      <button mat-button routerLink="/actualite">actualite</button>
+      <button mat-button routerLink="/mediatheque">Médiatèque</button>
+      <button mat-button routerLink="/membre">Membre</button>
+      <button mat-button routerLink="/commerce">Commerce</button>
+      <button mat-button routerLink="/contact">Contact</button>
+    
+
+
+    <!-- <ul class="navbar-nav">
       <li class="nav-item active">
         <a class="nav-link" routerLink="/"><span class="sr-only">(current)</span></a>
       </li>
@@ -26,7 +36,61 @@
       <li class="nav-item">
         <a class="nav-link disabled" routerLink="/contact">Contact</a>
       </li>
-    </ul>
+    </ul> -->
+
   </div>
-  <div col="row texte-white">login</div>
-</nav>
+  <div class="col col-lg-2 col-sm-3 col-md-2 texte-white" style="cursor: pointer" ><button mat-button (click)="seConnecter()" >Se connecter</button></div>
+
+</mat-toolbar-row>
+</mat-toolbar>
+<!-- <mat-toolbar color="primary">
+
+    <mat-toolbar-row>
+    
+    <span>Touba Toulouse</span>
+    
+        <span class="example-fill-remaining-space"></span>
+    
+        <span class="align-center"></span>
+    
+        <span class="example-spacer"></span>
+    
+        <button mat-button>About</button>
+    
+        <button mat-button>Contact</button>
+    
+        <button mat-icon-button [matMenuTriggerFor]="menu">
+    
+      <mat-icon>more_vert</mat-icon>
+    
+    </button>
+    
+    <mat-menu #menu="matMenu">
+    
+      <button mat-menu-item>
+    
+        <mat-icon>dialpad</mat-icon>
+    
+        <span>Redial</span>
+    
+      </button>
+    
+      <button mat-menu-item disabled>
+    
+        <mat-icon>voicemail</mat-icon>
+    
+        <span>Check voicemail</span>
+    
+      </button>
+    
+      <button mat-menu-item>
+    
+        <mat-icon>notifications_off</mat-icon>
+    
+        <span>Disable alerts</span>
+    
+      </button>
+    
+    </mat-menu>
+    
+     </mat-toolbar-row> -->

@@ -1,0 +1,12 @@
+.mat-card {
+    transition: box-shadow 280ms cubic-bezier(.4,0,.2,1);
+    display: block;
+    position: relative;
+    padding: 16px;
+    border-radius: 4px;
+    margin-bottom: 24px;
+}
+
+img{
+    margin-right: 5px;
+}

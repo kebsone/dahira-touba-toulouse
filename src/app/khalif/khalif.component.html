@@ -1,0 +1,13 @@
+<mat-card style="cursor: pointer;" (click)="detailKhalif(khalif.id)" >
+    <mat-card-header style="text-align: left !important;">
+      <div mat-card-avatar><img mat-card-image src='{{khalif.urlImg}}' alt="Serigne abdou khadre MBACKE">
+      </div>
+     <strong>{{khalif.prenom}} {{khalif.nom}} {{khalif.annee}}</strong>
+    </mat-card-header>
+    <mat-card-content>
+      <p>
+        {{khalif.descriptionCourte}} 
+        <strong style="cursor: pointer; color: #1A8278; border-bottom: 1px solid" (click)="detailKhalif(khalif.id)">Lire la suite</strong>
+      </p>
+    </mat-card-content>
+  </mat-card>
