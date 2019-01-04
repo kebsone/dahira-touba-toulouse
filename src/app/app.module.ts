@@ -2,8 +2,9 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import {MatExpansionModule} from '@angular/material/expansion';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import {MatTabsModule} from '@angular/material/tabs';
-import { MatBadgeModule, MatToolbarModule, MatMenuModule } from '@angular/material';
+import { MatBadgeModule, MatToolbarModule, MatMenuModule, MatSidenavModule } from '@angular/material';
 import { MatSortModule, MatTableModule, MatTooltipModule } from '@angular/material/';
 import { MatAutocompleteModule } from '@angular/material/autocomplete';
 import { MatButtonModule } from '@angular/material/button';
@@ -17,7 +18,6 @@ import { MatIconModule } from '@angular/material/icon';
 import { MatInputModule } from '@angular/material/input';
 import { MatPaginatorModule } from '@angular/material/paginator';
 import { MatRadioModule } from '@angular/material/radio';
-import { MatSelectModule } from '@angular/material/select';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
 import { MatSnackBarModule } from '@angular/material/snack-bar';
 import { AppRoutingModule } from './app-routing.module';
@@ -35,7 +35,9 @@ import { AccueilComponent } from './pages/accueil/accueil.component';
 import { LoginComponent } from './pages/login/login.component';
 import { KhalifComponent } from './khalif/khalif.component';
 import { PreHeaderComponent } from './pre-header/pre-header.component';
-
+import { HttpClient, HttpHandler, HttpClientModule } from '@angular/common/http';
+import { HttpInterceptorHandler } from '@angular/common/http/src/interceptor';
+import { FlexLayoutModule } from '@angular/flex-layout';
 
 
 const routes: Routes = [
@@ -66,7 +68,7 @@ const routes: Routes = [
     LoginComponent,
     KhalifComponent,
     PreHeaderComponent
-  
+
   ],
   imports: [
     BrowserModule,
@@ -92,9 +94,17 @@ const routes: Routes = [
     MatAutocompleteModule,
     MatCheckboxModule,
     MatDatepickerModule,
-    MatDialogModule
+    MatDialogModule,
+    FormsModule,
+    ReactiveFormsModule,
+    HttpClientModule,
+    MatTabsModule,
+    MatSidenavModule,
+   // FlexLayoutModule
   ],
-  providers: [],
+  exports: [MatButtonModule, MatIconModule, MatTabsModule,
+    MatSidenavModule],
+  providers: [HttpClient],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

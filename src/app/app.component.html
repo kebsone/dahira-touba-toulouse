@@ -1,10 +1,10 @@
 <!--The content below is only a placeholder and can be replaced.-->
 <!-- <app-pre-header></app-pre-header> -->
-<app-header></app-header>
+<!-- <mat-sidenav-content><app-header></app-header></mat-sidenav-content>
 <div  class="container-fluid">
   <div class="row">
     <div class="col col-lg-10 col-sm-8 col-md-9">
-        <router-outlet></router-outlet>
+       
 
     </div>
     <div class="col col-lg-2  col-sm-4 col-md-3" style="margin-top:46px;" >
@@ -12,8 +12,58 @@
           <app-khalif [khalif]="khalif"></app-khalif>
       </div>
       
+    </div>
 </div>
+
+<app-footer ></app-footer> -->
+
+<div class="container-fluid"> 
+        <mat-toolbar color="primary">
+                <!-- class="d-block d-sm-none" -->
+          <div >
+            <button mat-icon-button (click)="sidenav.toggle()">
+              <mat-icon>menu</mat-icon>
+            </button>
+          </div>
+      
+          <a mat-button class="companyName" routerLink="/">
+            <span>Touba Toulouse</span>
+          </a>
+          <span class="example-spacer"></span>
+          <div class="d-none d-sm-block">
+            <a mat-button mat-button routerLink="/dahira">Dahira</a>
+            <a mat-button mat-button routerLink="/mediatheque">Médiatèque</a>
+            <a mat-button mat-button routerLink="/membre">Membre</a>
+            <a mat-button mat-button routerLink="/commerce">Commerce</a>
+            <a mat-button mat-button routerLink="/contact">Contact</a>
+
+          </div>
+      
+        </mat-toolbar>
+        <mat-sidenav-container  class="example-container">
+      
+          <mat-sidenav color="primary" #sidenav class="col col-lg-2 col-sm-4 col-md-2" mode="over"  opened="false" fxHide.gt-sm="true">
+            <div class="col">
+                    <a mat-button mat-button routerLink="/dahira">Dahira</a>
+                    <a mat-button mat-button routerLink="/mediatheque">Médiatèque</a>
+                    <a mat-button mat-button routerLink="/membre">Membre</a>
+                    <a mat-button mat-button routerLink="/commerce">Commerce</a>
+                    <a mat-button mat-button routerLink="/contact">Contact</a>
+            </div>
+          </mat-sidenav>
+          <mat-sidenav-content >
+              <!-- afficher le contenu de la page -->
+              <div class="row">
+         <div class="col col-lg-10 col-sm-8 col-md-9">
+                <router-outlet></router-outlet>
+            </div>
+                <div  class="col col-lg-2  col-sm-4 col-md-3" style="margin-top:46px;">
+                        <div *ngFor="let khalif of khalifs">
+                                <app-khalif [khalif]="khalif"></app-khalif>
+                            </div>
+                </div>
+            </div>
+          </mat-sidenav-content>
+        </mat-sidenav-container>
+       
 </div>
-<app-footer ></app-footer>
-
-
