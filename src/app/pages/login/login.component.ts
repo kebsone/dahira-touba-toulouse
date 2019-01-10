@@ -81,12 +81,7 @@ export class LoginComponent implements OnInit {
     });
   }
 
-  onSubmit() {
-    this.submitted = true;
-    if (this.loginForm.invalid) {
-      return;
-    }
-    this.loading = true;
+  login() {
     this.authenticationService
       .login(
         this.loginFormContrl.mail.value,
@@ -96,12 +91,12 @@ export class LoginComponent implements OnInit {
       (response) => {
           const jwt = response.headers.get('Authorization');
           this.authenticationService.saveToken(jwt);
-        this._snackBar.open('Connexion réussi', 'X', this.snackbarConfigSuccess);
+        this._snackBar.open('Connexion réussi', 'x', this.snackbarConfigSuccess);
           this.router.navigateByUrl('/');
         },
         (error: HttpErrorResponse) => {
           if (error) {
-            this._snackBar.open('Vérifiez votre mail et mot de passe', 'X', this.snackbarConfigError);
+            this._snackBar.open('Vérifiez votre mail et mot de passe', 'x', this.snackbarConfigError);
           }
         });
   }
