@@ -100,6 +100,7 @@ const routes: Routes = [
     HttpClientModule,
     MatTabsModule,
     MatSidenavModule,
+    MatSnackBarModule
    // FlexLayoutModule
   ],
   exports: [MatButtonModule, MatIconModule, MatTabsModule,

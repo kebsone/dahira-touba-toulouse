@@ -1,15 +1,14 @@
-// .container{
-//     background-color: #fff;
-// }
-
+$dahira-green: #1a8278;
 .container-fluid {
     width: 100%;
-    padding-right: 24px;
-    padding-left: 24px;
+    // padding-right: 24px;
+    // padding-left: 24px;
     margin-right: auto;
     margin-left: auto;
     padding: 24px;
+    padding-top: 80px;
     padding-bottom: 80px;
+    
 }
 
 .fill-remaining-space {
@@ -24,6 +23,8 @@
 
 .mat-toolbar{
   height: 7vh;
+  background: #1c2b36;
+  color: $dahira-green;
 }
 
 div {
@@ -32,13 +33,23 @@ div {
 
 .mat-sidenav-container{
   background-color: #dde9f3;
-  min-height: 93vh !important;
+  min-height: 150vh !important;
 }
 
+.mat-sidenav {
+    color: $dahira-green;
+    background: #1c2b36;
+}
 a{
     text-decoration: none;
     font-size: 110%;
     white-space: normal;
+}
+
+a:hover {
+    text-decoration: none;
+    color: #fff;
+    background: $dahira-green
 }
 
 button{
@@ -58,3 +69,5 @@ button{
       font-size: 200%;
       text-align: center;
   }
+
+ 

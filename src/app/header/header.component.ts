@@ -1,6 +1,9 @@
-import { Component, OnInit, Output } from '@angular/core';
+import { Component, OnInit, Output, EventEmitter, Input, OnChanges } from '@angular/core';
 import { Router } from '@angular/router';
-import { EventEmitter } from 'events';
+import { AuthenticationServiceService } from '../service/authentication-service.service';
+import { AppUser } from '../dahira.interface';
+import { NullTemplateVisitor } from '@angular/compiler';
+
 
 @Component({
   selector: 'app-header',
@@ -8,19 +11,43 @@ import { EventEmitter } from 'events';
   styleUrls: ['./header.component.scss']
 })
 export class HeaderComponent implements OnInit {
-  @Output() public sidenavToggle = new EventEmitter();
-  constructor(private router: Router) { }
+  @Output() sideNaveToggled: EventEmitter<boolean> = new EventEmitter();
+  @Input() currentUser: AppUser = null;
+  isToggled = false;
+  constructor(private router: Router, private authService: AuthenticationServiceService) { }
 
-  ngOnInit() {
+  ngOnInit() { }
+
+
+
+  isAdmin(): boolean {
+    return this.authService.isAdmin();
   }
 
 
-  seConnecter() {
-    this.router.navigate(['login']);
+  isUser(): boolean {
+    return this.authService.isUser();
   }
 
-  public onToggleSidenav = () => {
-    this.sidenavToggle.emit();
+  isAuthenticated(): boolean {
+    return this.authService.isAuthencated();
+  }
+
+
+  seConnecter(event: any) {
+    event.stopPropagation();
+    this.router.navigateByUrl('/login');
+    console.log('dans preheader',    localStorage.getItem('currentUser'));
+  }
+
+
+  deconnecter() {
+    this.authService.deconnecter();
+  }
+
+  toggleSidenav() {
+    this.isToggled = !this.isToggled;
+    this.sideNaveToggled.emit(this.isToggled);
   }
 
 }

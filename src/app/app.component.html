@@ -1,26 +1,58 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<!-- <app-pre-header></app-pre-header> -->
-<!-- <mat-sidenav-content><app-header></app-header></mat-sidenav-content>
+
+<app-header [currentUser]="appUser" (sideNaveToggled)="sideNaveToggled($event)"></app-header>
+<mat-sidenav-container>
+    <mat-sidenav  #sidenav mode="side" class="col col-lg-2 col-sm-6 col-md-6 xol-xs-12">
+        <div class="col">
+            <div><a mat-button mat-button routerLink="/dahira">Dahira</a></div>
+            <div><a mat-button mat-button routerLink="/mediatheque">Médiatèque</a></div>
+            <div>  <a mat-button mat-button routerLink="/membre">Membre</a></div>
+            <div><a mat-button mat-button routerLink="/commerce">Commerce</a></div>
+            <div> <a mat-button mat-button routerLink="/contact">Contact</a></div>
+    </div>
+      </mat-sidenav>
+    
+<mat-sidenav-content>
+
 <div  class="container-fluid">
-  <div class="row">
-    <div class="col col-lg-10 col-sm-8 col-md-9">
-       
+   
 
-    </div>
-    <div class="col col-lg-2  col-sm-4 col-md-3" style="margin-top:46px;" >
-      <div *ngFor="let khalif of khalifs">
-          <app-khalif [khalif]="khalif"></app-khalif>
-      </div>
-      
-    </div>
+    <div style="overflow-x: hidden;">
+      <router-outlet></router-outlet>
+
+  
+</div> 
 </div>
+</mat-sidenav-content>
+</mat-sidenav-container>
+<!-- 
+<div class="col col-lg-2  col-sm-5 col-md-4 col-xs-12" style="margin-top:46px;" >
+    <div *ngFor="let khalif of khalifs">
+        <app-khalif [khalif]="khalif"></app-khalif>
+    </div>
+    
+  </div> -->
 
-<app-footer ></app-footer> -->
 
-<div class="container-fluid"> 
+<app-footer ></app-footer> 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!-- <div class="container-fluid"> 
         <mat-toolbar color="primary">
-                <!-- class="d-block d-sm-none" -->
-          <div >
+                class="d-block d-sm-none" -->
+          <!-- <div >
             <button mat-icon-button (click)="sidenav.toggle()">
               <mat-icon>menu</mat-icon>
             </button>
@@ -44,16 +76,16 @@
       
           <mat-sidenav color="primary" #sidenav class="col col-lg-2 col-sm-4 col-md-2" mode="over"  opened="false" fxHide.gt-sm="true">
             <div class="col">
-                    <a mat-button mat-button routerLink="/dahira">Dahira</a>
-                    <a mat-button mat-button routerLink="/mediatheque">Médiatèque</a>
-                    <a mat-button mat-button routerLink="/membre">Membre</a>
-                    <a mat-button mat-button routerLink="/commerce">Commerce</a>
-                    <a mat-button mat-button routerLink="/contact">Contact</a>
+                    <div><a mat-button mat-button routerLink="/dahira">Dahira</a></div>
+                    <div><a mat-button mat-button routerLink="/mediatheque">Médiatèque</a></div>
+                    <div>  <a mat-button mat-button routerLink="/membre">Membre</a></div>
+                    <div><a mat-button mat-button routerLink="/commerce">Commerce</a></div>
+                    <div> <a mat-button mat-button routerLink="/contact">Contact</a></div>
             </div>
           </mat-sidenav>
-          <mat-sidenav-content >
+          <mat-sidenav-content > -->
               <!-- afficher le contenu de la page -->
-              <div class="row">
+              <!-- <div class="row">
          <div class="col col-lg-10 col-sm-8 col-md-9">
                 <router-outlet></router-outlet>
             </div>
@@ -66,4 +98,4 @@
           </mat-sidenav-content>
         </mat-sidenav-container>
        
-</div>
+</div> --> 
