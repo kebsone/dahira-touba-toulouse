@@ -1,13 +1,19 @@
 
 <app-header [currentUser]="appUser" (sideNaveToggled)="sideNaveToggled($event)"></app-header>
 <mat-sidenav-container>
-    <mat-sidenav  #sidenav mode="side" class="col col-lg-2 col-sm-6 col-md-6 xol-xs-12">
-        <div class="col">
-            <div><a mat-button mat-button routerLink="/dahira">Dahira</a></div>
-            <div><a mat-button mat-button routerLink="/mediatheque">Médiatèque</a></div>
-            <div>  <a mat-button mat-button routerLink="/membre">Membre</a></div>
-            <div><a mat-button mat-button routerLink="/commerce">Commerce</a></div>
-            <div> <a mat-button mat-button routerLink="/contact">Contact</a></div>
+    <mat-sidenav  #sidenav mode="side" class="dahira-side-menu">
+        <div class="col dahira-menu-selected">
+            <div><a style="margin-top: 10px;" mat-button mat-button routerLink="/dahira"><i class="fab fa-dochub"><span style="margin-left: 5px;">Dahira</span></i></a></div>
+            <mat-divider style="color:#fff"></mat-divider>
+            <div><a mat-button mat-button routerLink="/mediatheque"><i class="fas fa-film"><span style="margin-left: 5px;">Médiatèque</span></i> </a></div>
+            <mat-divider ></mat-divider>
+          
+            <div *ngIf="isAuthenticated()">  <a mat-button mat-button routerLink="/membre"><i class="fas fa-users-cog"><span style="margin-left: 5px;">Membre</span></i></a></div>
+            <mat-divider *ngIf="isAuthenticated()"></mat-divider>
+            <div><a mat-button mat-button routerLink="/commerce"><i class="fas fa-dumpster"><span style="margin-left: 5px;">Commerce</span></i>
+              </a></div>
+              <mat-divider></mat-divider>
+              <div> <a mat-button mat-button routerLink="/contact"><i class="fas fa-file-contract"><span style="margin-left: 5px;">Contact</span></i></a></div>
     </div>
       </mat-sidenav>
     
@@ -32,7 +38,7 @@
     
   </div> -->
 
-
+  <app-dahira-scrol-top></app-dahira-scrol-top>
 <app-footer ></app-footer> 
 
 

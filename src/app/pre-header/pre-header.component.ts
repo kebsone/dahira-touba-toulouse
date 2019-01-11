@@ -1,6 +1,6 @@
 import { Component, OnInit, Input, OnChanges, SimpleChange, SimpleChanges } from '@angular/core';
 import { Router } from '@angular/router';
-import { AuthenticationServiceService } from '../service/authentication-service.service';
+import { DahiraService } from '../service/dahira.service';
 import { AppUser } from '../dahira.interface';
 
 @Component({
@@ -10,7 +10,7 @@ import { AppUser } from '../dahira.interface';
 })
 export class PreHeaderComponent implements OnInit, OnChanges {
   @Input()currentUser: AppUser = null;
-  constructor(private router: Router, private authService: AuthenticationServiceService) { }
+  constructor(private router: Router, private dahiraService: DahiraService) { }
 
   ngOnInit() {
   }
@@ -26,11 +26,11 @@ export class PreHeaderComponent implements OnInit, OnChanges {
 
 
   deconnecter() {
-    this.authService.deconnecter();
+    this.dahiraService.deconnecter();
   }
 
   isAuthenticated(): boolean {
-    return this.authService.isAuthencated();
+    return this.dahiraService.isAuthencated();
   }
 
 

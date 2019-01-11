@@ -58,6 +58,7 @@ mat-toolbar {
 }
 
 .mat-toolbar{
+min-height: 8vh;
 height: 8vh;
 }
 
@@ -106,4 +107,11 @@ button{
   color: #fff;
   border-radius: 15px;
   font-size: 12px;
+}
+
+.dahira-vertical {
+border-top-width: 0px;
+border-right-width: 1px;
+border-right-style: solid;
+display: inline;
 }

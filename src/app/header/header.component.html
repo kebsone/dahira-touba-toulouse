@@ -8,12 +8,18 @@
     </div> 
 
 <div class="dahira-button-header col col-lg-8 col-sm-5 col-md-5">
-      <a mat-button routerLink="/dahira">Dahira</a>
-      <a mat-button routerLink="/actualite">actualite</a>
-      <a mat-button routerLink="/mediatheque" *ngIf="isAuthenticated()">Médiatèque</a>
-      <a mat-button routerLink="/membre" *ngIf="isAuthenticated()">Membre</a>
-      <a mat-button routerLink="/commerce">Commerce</a>
-      <a mat-button routerLink="/contact">Contact</a>
+  <a mat-button mat-button routerLink="/dahira"><i class="fab fa-dochub"><span style="margin-left: 5px !important;">Dahira</span></i></a>
+  <mat-divider class="dahira-vertical"></mat-divider>
+  <a mat-button mat-button routerLink="/mediatheque"><i class="fas fa-film"><span  style="margin-left: 5px !important;"> Médiatèque</span></i> </a>
+  <mat-divider class="dahira-vertical"></mat-divider>
+ 
+  <a *ngIf="isAdmin()"mat-button mat-button routerLink="/membre"><i class="fas fa-users-cog"><span style="margin-left: 5px !important;"> Membre</span></i></a>
+  <mat-divider class="dahira-vertical" *ngIf="isAdmin()"></mat-divider>
+  <a mat-button mat-button routerLink="/commerce"><i class="fas fa-dumpster"><span  style="margin-left: 5px !important;"> Commerce</span></i>
+  
+  </a>
+  <mat-divider class="dahira-vertical"></mat-divider>
+  <a mat-button mat-button routerLink="/contact"><i class="fas fa-file-contract"><span> Contact</span></i></a>
     </div>
     <div class="col col-lg-1 col-sm-5 col-md-4 texte-white" style="cursor: pointer; padding: 24px;">
       <div *ngIf="!isAuthenticated()"><button mat-button   alt="Connectez vous ou créez un compte"  class="btn dahira-btn-cnx-dcnx" (click)="seConnecter($event)">

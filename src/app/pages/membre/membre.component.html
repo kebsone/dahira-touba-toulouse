@@ -1,3 +1,19 @@
-<p>
-  membre works!
-</p>
+<div class="row">
+  <div *ngFor="let user of users" class="col col-lg-2 col-sm-3 col-md-3 col-xs-12">
+<mat-card>
+    <mat-card-title>{{user.prenom}} {{user.nom |uppercase}}</mat-card-title>
+  <mat-card-content>
+      <mat-divider></mat-divider>
+    <ul style="text-align: justify">
+      <li>{{user.mail}}</li>
+      <li>{{user.telephone}}</li>
+      <li>{{user.adresse}}</li>
+    </ul>
+  </mat-card-content>
+  <mat-card-actions>
+      <button matButton class="btn dahira-button-valider" (click)="deleteUser(user.id)">Ajouter fonction</button>
+    <button matButton class="btn dahira-button-quitter" (click)="deleteUser(user.id)">Supprimer</button> 
+  </mat-card-actions>
+</mat-card>
+</div>
+</div>

@@ -1,7 +1,7 @@
 import { Component, OnInit, ChangeDetectorRef } from '@angular/core';
 import { FormGroup, FormBuilder, Validators } from '@angular/forms';
 import { ActivatedRoute, Router } from '@angular/router';
-import { AuthenticationServiceService } from '../../service/authentication-service.service';
+import { DahiraService } from '../../service/dahira.service';
 import { AppUser } from '../../dahira.interface';
 import { HttpErrorResponse } from '@angular/common/http';
 import { MatSnackBarConfig, MatSnackBar } from '@angular/material';
@@ -58,7 +58,7 @@ export class LoginComponent implements OnInit {
     private route: ActivatedRoute,
     private router: Router,
     private _snackBar: MatSnackBar,
-    private authenticationService: AuthenticationServiceService,
+    private dahiraService: DahiraService,
     private _changeDetector: ChangeDetectorRef
   ) {}
 
@@ -87,7 +87,7 @@ export class LoginComponent implements OnInit {
       return;
     }
     this.loading = true;
-    this.authenticationService
+    this.dahiraService
       .login(
         this.loginFormContrl.mail.value,
         this.loginFormContrl.password.value
@@ -95,7 +95,7 @@ export class LoginComponent implements OnInit {
       .subscribe(
       (response) => {
           const jwt = response.headers.get('Authorization');
-          this.authenticationService.saveToken(jwt);
+          this.dahiraService.saveToken(jwt);
         this._snackBar.open('Connexion réussi', 'X', this.snackbarConfigSuccess);
           this.router.navigateByUrl('/');
         },
@@ -109,7 +109,7 @@ export class LoginComponent implements OnInit {
   inscrire() {
     console.log(this.inscriptionForm.value);
     const user = this.createUser();
-    this.authenticationService.saveUser(user).subscribe(data => {
+    this.dahiraService.saveUser(user).subscribe(data => {
      console.log('retour de la creaion', data);
    });
   }

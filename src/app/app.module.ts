@@ -37,8 +37,8 @@ import { KhalifComponent } from './khalif/khalif.component';
 import { PreHeaderComponent } from './pre-header/pre-header.component';
 import { HttpClient, HttpHandler, HttpClientModule } from '@angular/common/http';
 import { HttpInterceptorHandler } from '@angular/common/http/src/interceptor';
-import { FlexLayoutModule } from '@angular/flex-layout';
-
+import { DahiraScrolTopComponent } from './theme/dahira-scrol-top/dahira-scrol-top.component';
+import {MatDividerModule} from '@angular/material/divider';
 
 const routes: Routes = [
   { path: '', redirectTo: 'accueil', pathMatch: 'full' },
@@ -67,7 +67,8 @@ const routes: Routes = [
     AccueilComponent,
     LoginComponent,
     KhalifComponent,
-    PreHeaderComponent
+    PreHeaderComponent,
+    DahiraScrolTopComponent
 
   ],
   imports: [
@@ -100,7 +101,8 @@ const routes: Routes = [
     HttpClientModule,
     MatTabsModule,
     MatSidenavModule,
-    MatSnackBarModule
+    MatSnackBarModule,
+    MatDividerModule
    // FlexLayoutModule
   ],
   exports: [MatButtonModule, MatIconModule, MatTabsModule,

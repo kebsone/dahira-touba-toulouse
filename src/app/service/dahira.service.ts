@@ -1,20 +1,20 @@
 import { Injectable } from '@angular/core';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { AppUser } from '../dahira.interface';
 import { JwtHelperService } from '@auth0/angular-jwt';
 import { Observable } from 'rxjs/Observable';
 import 'rxjs/add/observable/of';
+import { Options } from 'selenium-webdriver/edge';
 
 @Injectable({
   providedIn: 'root'
 })
-export class AuthenticationServiceService {
+export class DahiraService {
   private host = 'http://localhost:8080';
   jwt: string;
   username: string;
   roles: Array<string>;
   currentUser: AppUser = null;
-
   constructor(private http: HttpClient) { }
 
 
@@ -65,6 +65,11 @@ export class AuthenticationServiceService {
       console.log(error);
       });
 
+  }
+
+  getMembres() {
+  const dahiraHeaders = new HttpHeaders().set('Authorization', 'Bearer ' + localStorage.getItem('token'));
+    return this.http.get(this.host + '/appUsers', { headers: dahiraHeaders });
   }
 
   isAdmin() {

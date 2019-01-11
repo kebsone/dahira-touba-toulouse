@@ -2,7 +2,7 @@ import { TestBed } from '@angular/core/testing';
 
 import { DahiraService } from './dahira.service';
 
-describe('DahiraService', () => {
+describe('AuthenticationServiceService', () => {
   beforeEach(() => TestBed.configureTestingModule({}));
 
   it('should be created', () => {

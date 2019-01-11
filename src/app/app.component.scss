@@ -47,9 +47,10 @@ a{
 }
 
 a:hover {
-    text-decoration: none;
+    text-decoration: underline  #fff;
     color: #fff;
-    background: $dahira-green
+    background: $dahira-green;
+    width: 100% !important;
 }
 
 button{
@@ -70,4 +71,19 @@ button{
       text-align: center;
   }
 
- 
+ .dahira-side-menu{
+    width: 200px;
+    top: 63px;
+    left: 0;
+    z-index: 1000;
+    display: block;
+    background-color: #1c2b36;
+    height: calc(100% - 70px);
+    position: fixed;
+    overflow: hidden;
+ }
+
+
+ .dahira-menu-selected{
+
+ }

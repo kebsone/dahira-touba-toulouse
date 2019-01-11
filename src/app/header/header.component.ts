@@ -1,6 +1,6 @@
 import { Component, OnInit, Output, EventEmitter, Input, OnChanges } from '@angular/core';
 import { Router } from '@angular/router';
-import { AuthenticationServiceService } from '../service/authentication-service.service';
+import { DahiraService } from '../service/dahira.service';
 import { AppUser } from '../dahira.interface';
 import { NullTemplateVisitor } from '@angular/compiler';
 
@@ -14,23 +14,23 @@ export class HeaderComponent implements OnInit {
   @Output() sideNaveToggled: EventEmitter<boolean> = new EventEmitter();
   @Input() currentUser: AppUser = null;
   isToggled = false;
-  constructor(private router: Router, private authService: AuthenticationServiceService) { }
+  constructor(private router: Router, private dahiraService: DahiraService) { }
 
   ngOnInit() { }
 
 
 
   isAdmin(): boolean {
-    return this.authService.isAdmin();
+    return this.dahiraService.isAdmin();
   }
 
 
   isUser(): boolean {
-    return this.authService.isUser();
+    return this.dahiraService.isUser();
   }
 
   isAuthenticated(): boolean {
-    return this.authService.isAuthencated();
+    return this.dahiraService.isAuthencated();
   }
 
 
@@ -42,7 +42,7 @@ export class HeaderComponent implements OnInit {
 
 
   deconnecter() {
-    this.authService.deconnecter();
+    this.dahiraService.deconnecter();
   }
 
   toggleSidenav() {

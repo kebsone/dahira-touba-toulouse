@@ -1,6 +1,6 @@
 import { Component, OnInit, ViewChild } from '@angular/core';
 import { Khalif } from './khalif/Khalif';
-import { AuthenticationServiceService } from './service/authentication-service.service';
+import { DahiraService } from './service/dahira.service';
 import { AppUser } from './dahira.interface';
 import { MatSidenav } from '@angular/material';
 
@@ -72,12 +72,12 @@ export class AppComponent implements OnInit {
     descriptionCourte: 'Cheikh Sidi Moukhtar Mbacké, petit-fils de cheikh Ahmadou Bamba Mbacké de par son père Serigne Bara ibn Khadim Rassoul. Cheikh Sidi Moukhtar Mbacké est venu au monde en 1924 à Mbacké Kadior (arrondissement de Darou Mousty), un village qui fait partie (...)'
   }
  ];
-  constructor(private authService: AuthenticationServiceService) {
+  constructor(private dahiraSerivie: DahiraService) {
 
   }
 
   ngOnInit() {
-    this.authService.loadToken();
+    this.dahiraSerivie.loadToken();
     this.appUser = JSON.parse(localStorage.getItem('currentUser'));
     console.log('dans appModule', this.appUser);
   }
@@ -90,4 +90,7 @@ export class AppComponent implements OnInit {
     }
   }
 
+  isAuthenticated() {
+  return   this.dahiraSerivie.isAuthencated();
+  }
 }
