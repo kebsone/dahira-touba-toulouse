@@ -1,3 +1,31 @@
-<div>
-<h3 style="margin-right: auto; margin-top:auto;">Bievenue sur le lieu de partage du Dahira Touba Toulouse</h3>
-</div>
+<!--The content below is only a placeholder and can be replaced.-->
+<div style="margin-top:70px">
+        <!-- <h1 style="text-align:center">
+          Current slide: {{slideshow.slideIndex}}
+        </h1> -->
+        <div style="display:block"
+             [style.width]="width">
+          <app-slideshow #slideshow style="margin-top:25px;"
+                     [imageUrls]="imageUrls"
+                     [height]="height"
+                     [minHeight]="minHeight"
+                     [arrowSize]="arrowSize"
+                     [showArrows]="showArrows"
+                     [disableSwiping]="disableSwiping"
+                     [autoPlay]="autoPlay"
+                     [stopAutoPlayOnSlide]="stopAutoPlayOnSlide"
+                     [debug]="debug"
+                     [backgroundSize]="backgroundSize"
+                     [backgroundPosition]="backgroundPosition"
+                     [backgroundRepeat]="backgroundRepeat"
+                     [showDots]="showDots"
+                     [dotColor]="dotColor"
+                     [showCaptions]="showCaptions"
+                     [captionColor]="captionColor"
+                     [captionBackground]="captionBackground"
+                     [lazyLoad]="lazyLoad"
+                     [hideOnNoSlides]="hideOnNoSlides">
+          </app-slideshow>
+        </div>
+      </div>
+      

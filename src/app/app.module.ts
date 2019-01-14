@@ -1,4 +1,4 @@
-import { BrowserModule } from '@angular/platform-browser';
+import { BrowserModule, TransferState, BrowserTransferStateModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import {MatExpansionModule} from '@angular/material/expansion';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
@@ -39,10 +39,11 @@ import { HttpClient, HttpHandler, HttpClientModule } from '@angular/common/http'
 import { HttpInterceptorHandler } from '@angular/common/http/src/interceptor';
 import { DahiraScrolTopComponent } from './theme/dahira-scrol-top/dahira-scrol-top.component';
 import {MatDividerModule} from '@angular/material/divider';
+import { SlideshowComponent } from './slideshow/slideshow.component';
 
 const routes: Routes = [
-  { path: '', redirectTo: 'accueil', pathMatch: 'full' },
-  { path: '', component: AccueilComponent },
+  { path: 'acceuil', redirectTo: 'accueil', pathMatch: 'full' },
+  { path: 'acceuil', component: AccueilComponent },
   { path: 'dahira', component: DahiraComponent },
   { path: 'actualite', component: ActualiteComponent },
   { path: 'mediatheque', component: MediathequeComponent },
@@ -68,7 +69,8 @@ const routes: Routes = [
     LoginComponent,
     KhalifComponent,
     PreHeaderComponent,
-    DahiraScrolTopComponent
+    DahiraScrolTopComponent,
+    SlideshowComponent
 
   ],
   imports: [
@@ -102,7 +104,8 @@ const routes: Routes = [
     MatTabsModule,
     MatSidenavModule,
     MatSnackBarModule,
-    MatDividerModule
+    MatDividerModule,
+    BrowserTransferStateModule
    // FlexLayoutModule
   ],
   exports: [MatButtonModule, MatIconModule, MatTabsModule,
