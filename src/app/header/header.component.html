@@ -1,32 +1,32 @@
 <mat-toolbar class="bg-header">
   <mat-toolbar-row>
-    <div class="col col-lg-3 col-sm-8 col-md-10"> 
+    <div class="col col-lg-3 col-sm-4 col-md-4"> 
         <button mat-icon-button (click)="toggleSidenav()">
             <mat-icon style="color: #fff;">menu</mat-icon>
           </button>
          <span style="color:#1a8278">TOUBA TOULOUSE</span>
     </div> 
 
-<div class="dahira-button-header col col-lg-8  d-none d-lg-block d-xl-none">
+<div class="dahira-button-header col col-lg-8 col-sm-6 col-md-6 d-none d-md-block">
 
-    <a mat-button mat-button routerLink="/acceuil"><i class="fa fa-home"><span style="margin-left: 5px !important;">Accueil</span></i></a>
+    <a mat-button mat-button routerLink="/acceuil"><i class="fas fa-house-damage"><span style="margin-left: 5px !important;">Accueil</span></i></a>
     <mat-divider class="dahira-vertical"></mat-divider>
  
     
   <a mat-button mat-button routerLink="/dahira"><i class="fab fa-dochub"><span style="margin-left: 5px !important;">Dahira</span></i></a>
   <mat-divider class="dahira-vertical"></mat-divider>
-  <a mat-button mat-button routerLink="/mediatheque"><i class="fas fa-film"><span  style="margin-left: 5px !important;"> Médiatèque</span></i> </a>
+  <a mat-button mat-button routerLink="/mediatheque"><i class="far fa-file-video"><span  style="margin-left: 5px !important;"> Médiatèque</span></i> </a>
   <mat-divider class="dahira-vertical"></mat-divider>
  
   <a *ngIf="isAdmin()"mat-button mat-button routerLink="/membre"><i class="fas fa-users-cog"><span style="margin-left: 5px !important;"> Membre</span></i></a>
   <mat-divider class="dahira-vertical" *ngIf="isAdmin()"></mat-divider>
-  <a mat-button mat-button routerLink="/commerce"><i class="fas fa-dumpster"><span  style="margin-left: 5px !important;"> Commerce</span></i>
+  <a mat-button mat-button routerLink="/commerce"><i class="fab fa-buysellads"><span  style="margin-left: 5px !important;"> Annonce</span></i>
   
   </a>
   <mat-divider class="dahira-vertical"></mat-divider>
   <a mat-button mat-button routerLink="/contact"><i class="fas fa-file-contract"><span> Contact</span></i></a>
     </div>
-    <div class="col col-lg-1 col-sm-4 col-md-2 texte-white" style="cursor: pointer; padding: 24px;">
+    <div class="col col-lg-1 col-sm-2 col-md-2 texte-white" style="cursor: pointer; padding: 24px;">
       <div *ngIf="!isAuthenticated()"><button mat-button   alt="Connectez vous ou créez un compte"  class="btn dahira-btn-cnx-dcnx" (click)="seConnecter($event)">
         Connexion
       </button>
