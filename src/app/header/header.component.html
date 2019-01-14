@@ -1,13 +1,13 @@
 <mat-toolbar class="bg-header">
   <mat-toolbar-row>
-    <div class="col col-lg-3 col-sm-2 col-md-4"> 
+    <div class="col col-lg-3 col-sm-8 col-md-10"> 
         <button mat-icon-button (click)="toggleSidenav()">
             <mat-icon style="color: #fff;">menu</mat-icon>
           </button>
          <span style="color:#1a8278">TOUBA TOULOUSE</span>
     </div> 
 
-<div class="dahira-button-header col col-lg-8 col-sm-5 col-md-5">
+<div class="dahira-button-header col col-lg-8  d-none d-lg-block d-xl-none">
 
     <a mat-button mat-button routerLink="/acceuil"><i class="fa fa-home"><span style="margin-left: 5px !important;">Accueil</span></i></a>
     <mat-divider class="dahira-vertical"></mat-divider>
@@ -26,7 +26,7 @@
   <mat-divider class="dahira-vertical"></mat-divider>
   <a mat-button mat-button routerLink="/contact"><i class="fas fa-file-contract"><span> Contact</span></i></a>
     </div>
-    <div class="col col-lg-1 col-sm-5 col-md-4 texte-white" style="cursor: pointer; padding: 24px;">
+    <div class="col col-lg-1 col-sm-4 col-md-2 texte-white" style="cursor: pointer; padding: 24px;">
       <div *ngIf="!isAuthenticated()"><button mat-button   alt="Connectez vous ou créez un compte"  class="btn dahira-btn-cnx-dcnx" (click)="seConnecter($event)">
         Connexion
       </button>
