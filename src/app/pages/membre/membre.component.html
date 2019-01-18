@@ -1,19 +1,32 @@
-<div class="row">
-  <div *ngFor="let user of users" class="col col-lg-2 col-sm-3 col-md-3 col-xs-12">
-<mat-card>
-    <mat-card-title>{{user.prenom}} {{user.nom |uppercase}}</mat-card-title>
+<div class="col container-fluid" style="padding-top: 90px;">
+    <h2>Gestion des membres</h2>
+  <div style="text-align: left;"><h3>{{users.length}} utilisateurs</h3></div>
+  <div class="row">
+    
+    <div *ngFor="let user of users" class="col col-lg-3 col-sm-3 col-md-3 col-xs-12">
+  <mat-card >
+  <div>
+    <mat-card-title (click)="afficheDetails(user.id, user.mail)"  style="cursor: pointer;" alt="Editer">{{user.prenom}} {{user.nom |uppercase}}</mat-card-title>
+  </div>
+  <div>
   <mat-card-content>
-      <mat-divider></mat-divider>
+      <!-- <mat-divider></mat-divider> -->
     <ul style="text-align: justify">
-      <li>{{user.mail}}</li>
-      <li>{{user.telephone}}</li>
+      <li>{{user.mail}}</li> <br/>
+      <li>{{user.telephone}}</li> <br/>
       <li>{{user.adresse}}</li>
     </ul>
+
+
   </mat-card-content>
-  <mat-card-actions>
-      <button matButton class="btn dahira-button-valider" (click)="deleteUser(user.id)">Ajouter fonction</button>
-    <button matButton class="btn dahira-button-quitter" (click)="deleteUser(user.id)">Supprimer</button> 
+</div>
+  <mat-card-actions style="margin-bottom: 20px;">
+    <div class="row">
+    <div class="col-lg-6 col-sm-6 col-md-6 col-xs-12"><button matButton class="btn dahira-button-valider" (click)="deleteUser(user.id)"><i class="fas fa-plus-circle"></i> Fonction</button></div>
+     <div class="col-lg-6 col-sm-6 col-md-6 col-xs-12"><button matButton class="btn dahira-button-quitter" (click)="deleteUser(user.id)"><i class="fas fa-trash-alt"></i> Supprimer</button> </div>
+  </div>
   </mat-card-actions>
-</mat-card>
+</mat-card><br/>
+</div>
 </div>
 </div>

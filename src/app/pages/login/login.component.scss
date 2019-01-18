@@ -2,17 +2,6 @@ $dahira-green:#1A8278;
 $dahira-red:#f44336 ;
 
 
-  .dahira-button-valider{
-    border: solid 1px $dahira-green;
-    background: #fff;
-    color: $dahira-green;
-  }
-
-  .dahira-button-quitter{
-    border: solid 1px $dahira-red;
-    background: #fff;
-    color: $dahira-red;
-  }
 
   /deep/ .snack-bar-success {
     background-color:$dahira-green;

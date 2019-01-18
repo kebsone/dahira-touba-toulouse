@@ -24,3 +24,15 @@ hr {
     flex-direction: row;
     border-bottom: 1px solid #e8e8e8;
 }
+
+.mat-expansion-panel {
+    box-sizing: content-box;
+    display: block;
+    margin: 0;
+    border-radius: 4px;
+    overflow: hidden;
+    transition:   margin 225ms cubic-bezier(.4,0,.2,1),box-shadow 280ms cubic-bezier(.4,0,.2,1);
+    background-color: #fff;
+    margin-top: 24px !important;
+    min-height: 500px;
+}

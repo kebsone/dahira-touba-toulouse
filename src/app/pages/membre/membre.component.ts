@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { DahiraService } from '../../service/dahira.service';
 import { AppUser } from '../../dahira.interface';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-membre',
@@ -10,7 +11,7 @@ import { AppUser } from '../../dahira.interface';
 export class MembreComponent implements OnInit {
   users: AppUser[] = [];
 
-  constructor(private dahiraService: DahiraService) { }
+  constructor(private dahiraService: DahiraService, private router: Router) { }
 
   ngOnInit() {
     this.dahiraService.getMembres().subscribe((response: AppUser[]) => {
@@ -22,5 +23,9 @@ export class MembreComponent implements OnInit {
   deleteUser(userId: number) {
     console.log(userId);
   }
+
+  afficheDetails(id: number, username: string) {
+    this.router.navigate([`membre/details/${id}`], {queryParams : { username : username }});
+   }
 
 }

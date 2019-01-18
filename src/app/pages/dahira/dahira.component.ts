@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { DahiraService } from '../../service/dahira.service';
 
 @Component({
   selector: 'app-dahira',
@@ -7,9 +8,12 @@ import { Component, OnInit } from '@angular/core';
 })
 export class DahiraComponent implements OnInit {
 
-  constructor() { }
+  constructor(private dahiraService: DahiraService) { }
 
   ngOnInit() {
+    this.dahiraService.getCommissions().subscribe(value => {
+      console.log(value);
+    });
   }
 
 

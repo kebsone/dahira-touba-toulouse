@@ -7,30 +7,41 @@
            
          </div>
          <mat-divider class="dahira-vertical"></mat-divider>
-            <div><a  mat-button mat-button routerLink="/dahira"><i class="fab fa-dochub"><span style="margin-left: 5px;">Dahira</span></i></a></div>
+            <div><a   mat-button routerLink="/dahira"><i class="fab fa-dochub"><span style="margin-left: 5px;">Dahira</span></i></a></div>
             <mat-divider style="color:#fff"></mat-divider>
-            <div><a mat-button mat-button routerLink="/mediatheque"><i class="far fa-file-video"><span style="margin-left: 5px;">Médiatèque</span></i> </a></div>
+            <div><a  mat-button routerLink="/mediatheque"><i class="far fa-file-video"><span style="margin-left: 5px;">Médiatèque</span></i> </a></div>
             <mat-divider ></mat-divider>
           
-            <div *ngIf="isAuthenticated()">  <a mat-button mat-button routerLink="/membre"><i class="fas fa-users-cog"><span style="margin-left: 5px;">Membre</span></i></a></div>
+            <div *ngIf="isAuthenticated()">  <a  mat-button routerLink="/membre"><i class="fas fa-address-book"><span style="margin-left: 5px;">Membre</span></i></a></div>
             <mat-divider *ngIf="isAuthenticated()"></mat-divider>
-            <div><a mat-button mat-button routerLink="/commerce"><i class="fab fa-buysellads"><span style="margin-left: 5px;">Annonce</span></i>
+            <div><a  mat-button routerLink="/commerce"><i class="fab fa-buysellads"><span style="margin-left: 5px;">Annonce</span></i>
               </a></div>
               <mat-divider></mat-divider>
-              <div> <a mat-button mat-button routerLink="/contact"><i class="fas fa-file-contract"><span style="margin-left: 5px;">Contact</span></i></a></div>
-    </div>
+              <div> <a mat-button routerLink="/contact"><i class="fas fa-file-contract"><span style="margin-left: 5px;">Contact</span></i></a></div>
+         
+              <div  class="row"  style="margin-top:80%; overflow: hidden;">
+                 <div class="col-lg-3 "><span   click=""><i class="fab fa-facebook"></i></span> </div>
+                <div  class="col-lg-3"> <span click=""><i style="color:#dd4b39" class="fab fa-youtube-square"></i></span></div>
+
+                <div  class="col-lg-3"> <span  click=""><i style="color: #55acee;"   class="fab fa-twitter"></i></span></div>
+                
+                <div  class="col-lg-3"> <span  click=""> <i style="color: #F26798" class="fas fa-envelope"></i></span></div>
+               
+              </div>
+   
+            </div>
+
+   
       </mat-sidenav>
     
 <mat-sidenav-content>
 
-<div >
    
 
     <div style="overflow-x: hidden;">
       <router-outlet></router-outlet>
 
   
-</div> 
 </div>
 </mat-sidenav-content>
 </mat-sidenav-container>

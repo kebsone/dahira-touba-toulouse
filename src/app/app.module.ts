@@ -40,14 +40,16 @@ import { HttpInterceptorHandler } from '@angular/common/http/src/interceptor';
 import { DahiraScrolTopComponent } from './theme/dahira-scrol-top/dahira-scrol-top.component';
 import {MatDividerModule} from '@angular/material/divider';
 import { SlideshowComponent } from './slideshow/slideshow.component';
+import { DetailMemberComponent } from './pages/detail-member/detail-member.component';
 
 const routes: Routes = [
-  { path: 'acceuil', redirectTo: 'accueil', pathMatch: 'full' },
-  { path: 'acceuil', component: AccueilComponent },
+  { path: '', redirectTo: 'accueil', pathMatch: 'full' },
+  { path: 'accueil', component: AccueilComponent },
   { path: 'dahira', component: DahiraComponent },
   { path: 'actualite', component: ActualiteComponent },
   { path: 'mediatheque', component: MediathequeComponent },
   { path: 'membre', component: MembreComponent },
+  { path: 'membre/details/:id', component: DetailMemberComponent },
   { path: 'commerce', component: CommerceComponent },
   { path: 'contact', component: ContactComponent },
   { path: 'login', component: LoginComponent}
@@ -70,7 +72,8 @@ const routes: Routes = [
     KhalifComponent,
     PreHeaderComponent,
     DahiraScrolTopComponent,
-    SlideshowComponent
+    SlideshowComponent,
+    DetailMemberComponent
 
   ],
   imports: [

@@ -8,9 +8,10 @@ import { IImage } from '../../slideshow/IImage';
 })
 export class AccueilComponent implements OnInit {
   imageUrls: (string | IImage)[] = [
-    { url: '../../../assets/img/touba2.jpeg', clickAction: () => alert('custom click function') },
-    { url: '../../../assets/img/touba3.jpeg', caption: 'Apple TV'},
-    { url: '../../../assets/img/touba4.jpeg', backgroundSize: 'contain', backgroundPosition: 'center' }
+    { url: '../../../assets/img/touba1.jpeg', title: 'GRANDE MOSQUEE DE TOUBA', caption: 'DIEUREUDIEUF SERIGNE TOUBA',  backgroundPosition: 'center'},
+    { url: '../../../assets/img/touba2.jpeg', clickAction: () => alert('custom click function'), caption: 'DIEUREUDIEUF SERIGNE TOUBA',  backgroundPosition: 'center' },
+    { url: '../../../assets/img/touba3.jpeg', caption: 'DIEUREUDIEUF SERIGNE TOUBA',  backgroundPosition: 'center'},
+    { url: '../../../assets/img/touba4.jpeg', caption: 'DIEUREUDIEUF SERIGNE TOUBA', backgroundPosition: 'center' }
   ];
   height = '800px';
   minHeight: string;
@@ -36,8 +37,8 @@ export class AccueilComponent implements OnInit {
 
   ngOnInit() {
     // setTimeout(() => {
-      console.log('adding an image url dynamically.');
-      this.imageUrls.push('../../../assets/img/touba1.jpeg');
+       console.log('adding an image url dynamically.');
+      // this.imageUrls.push('../../../assets/img/touba1.jpeg');
     // }, 2000);
   }
 

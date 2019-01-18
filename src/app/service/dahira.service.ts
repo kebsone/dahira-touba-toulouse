@@ -19,23 +19,30 @@ export class DahiraService {
 
 
   login(mail: string, password: string) {
-    console.log('herere', mail, password);
     // On ajoute observe pour dire à http de nous retourner toute la réponse; pas que le body
     return this.http.post(this.host + '/login', { mail, password }, {observe: 'response'});
   }
 
   saveUser(user: AppUser) {
-    console.log('dans save user');
-    console.log(user);
-    console.log( this.host + '/register', user);
     return this.http.post(this.host + '/register',  user, {observe: 'response'});
   }
 
+  updateUser(user: AppUser) {
+    return this.http.put(this.host + '/user',  user);
+  }
+
+  getUserById(id: number) {
+    const url = `${this.host}/user/${id}`;
+    return this.http.get<AppUser>(url);
+  }
 
   getUserByUsername() {
-    console.log('avant envoi', this.username);
-
     const url = `${this.host}/user/${this.username}`;
+    return this.http.get<AppUser>(url);
+  }
+
+  getDetailsUserByUsername(username: string) {
+    const url = `${this.host}/user/${username}`;
     return this.http.get<AppUser>(url);
   }
   saveToken(jwt: string) {
@@ -55,7 +62,7 @@ export class DahiraService {
     this.getCurrentUser();
   }
 
-  getCurrentUser() {
+  getCurrentUser(): AppUser {
     let appUSer: AppUser = null;
     this.getUserByUsername().subscribe((response: AppUser) => {
       console.log(response);
@@ -64,7 +71,7 @@ export class DahiraService {
     }, error => {
       console.log(error);
       });
-
+    return appUSer;
   }
 
   getMembres() {
@@ -72,6 +79,20 @@ export class DahiraService {
     return this.http.get(this.host + '/appUsers', { headers: dahiraHeaders });
   }
 
+  getCommissions() {
+    const dahiraHeaders = new HttpHeaders().set('Authorization', 'Bearer ' + localStorage.getItem('token'));
+    return this.http.get(this.host + '/commissions', { headers: dahiraHeaders });
+  }
+
+  getPostes() {
+    const dahiraHeaders = new HttpHeaders().set('Authorization', 'Bearer ' + localStorage.getItem('token'));
+    return this.http.get(this.host + '/postes', { headers: dahiraHeaders });
+  }
+
+  getPostesByCommission(id: number) {
+    const url = `${this.host}/postes/${id}`;
+    return this.http.get<AppUser>(url);
+  }
   isAdmin() {
     return this.roles && this.roles.indexOf('ADMIN') >= 0;
   }

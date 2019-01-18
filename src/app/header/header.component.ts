@@ -14,9 +14,12 @@ export class HeaderComponent implements OnInit {
   @Output() sideNaveToggled: EventEmitter<boolean> = new EventEmitter();
   @Input() currentUser: AppUser = null;
   isToggled = false;
+  userConnected: string;
   constructor(private router: Router, private dahiraService: DahiraService) { }
 
-  ngOnInit() { }
+  ngOnInit() {
+    this.currentUser = JSON.parse(localStorage.getItem('currentUser'));
+   }
 
 
 
@@ -34,15 +37,32 @@ export class HeaderComponent implements OnInit {
   }
 
 
+
   seConnecter(event: any) {
     event.stopPropagation();
     this.router.navigateByUrl('/login');
-    console.log('dans preheader',    localStorage.getItem('currentUser'));
   }
 
 
   deconnecter() {
     this.dahiraService.deconnecter();
+    this.currentUser = null;
+
+    this.goToDashbord();
+
+  }
+
+  goToDashbord() {
+    this.router.navigateByUrl('/accueil');
+  }
+
+  refresh() {
+    window.location.reload();
+  }
+
+  userDetails() {
+     this.router.navigate([`membre/details/${this.currentUser.id}`], {queryParams : { username : this.currentUser.mail }});
+
   }
 
   toggleSidenav() {

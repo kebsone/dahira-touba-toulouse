@@ -6,6 +6,20 @@
 
 $dahira-green:#1A8278;
 $default-text:#666;
+$dahira-red:#f44336 ;
+
+
+  .dahira-button-valider{
+    border: solid 1px $dahira-green;
+    background: #fff;
+    color: $dahira-green;
+  }
+
+  .dahira-button-quitter{
+    border: solid 1px $dahira-red;
+    background: #fff;
+    color: $dahira-red;
+  }
 .container-fluid {
     width: 100%;
     margin-right: auto;
@@ -38,17 +52,6 @@ body {
     background-color: #fff;
 }
 
-.mat-expansion-panel {
-    box-sizing: content-box;
-    display: block;
-    margin: 0;
-    border-radius: 4px;
-    overflow: hidden;
-    transition:   margin 225ms cubic-bezier(.4,0,.2,1),box-shadow 280ms cubic-bezier(.4,0,.2,1);
-    background-color: #fff;
-    margin-top: 24px !important;
-    min-height: 500px;
-}
 
 .mat-expansion-panel-header {
     display: flex;

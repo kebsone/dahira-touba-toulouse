@@ -1,0 +1,100 @@
+<div class="container-fluid">
+    <mat-expansion-panel expanded style="padding-bottom: 40px;">
+        <mat-expansion-panel-header>
+           <strong>Modifier les informations de {{user?.prenom}} {{user?.nom}}</strong>
+        </mat-expansion-panel-header>
+        <mat-card class="col-lg-6 col-sm-8 col-md-8 col-xs-12" style="margin-top:40px; margin-left:auto; margin-right: auto; background-color: #1A8278">
+        <form [formGroup]="detailsUserForm">
+            <!-- Prénom -->
+            <div class="form-group">
+               <label for="prenom">Prénom *</label>
+               <input required
+                 formControlName="prenom"
+                 class="form-control"
+                 [ngClass]="{
+                   'is-invalid': submitted && detailsUserFormControl.prenom.errors
+                 }"
+               />
+              </div>
+              <div class="row">
+                     <!-- Nom -->
+                     <div class="form-group  col-lg-6 col-sm-8 col-md-8 col-xs-12">
+                       <label for="nom">Nom *</label>
+                       <input
+                         type="text"
+                         formControlName="nom"
+                         class="form-control"
+                         [ngClass]="{
+                           'is-invalid': submitted && detailsUserFormControl.nom.errors
+                         }"
+                       />
+                     </div>
+                              
+             <!-- Genre -->
+             <div class="form-group col-lg-6 col-sm-4 col-md-4 col-xs-12">
+                 <label for="prenom">Genre *</label>
+                 <input
+                   formControlName="genre"
+                   class="form-control"
+                   [ngClass]="{
+                     'is-invalid': submitted && detailsUserFormControl.genre.errors
+                   }"
+                 />
+                </div>
+              </div>
+                            
+                     <div class="row">
+         
+                      <!-- Mail -->
+                      <div class="form-group col-lg-6 col-sm-6 col-xs-12 col-md-6">
+                       <label for="prenom">Mail *</label>
+                       <input
+                         formControlName="mail"
+                         class="form-control"
+                         [ngClass]="{
+                           'is-invalid': submitted && detailsUserFormControl.mail.errors
+                         }"
+                       />
+                      </div>
+                      <!-- Telephone -->
+                      <div class="form-group col-lg-6 col-sm-6 col-xs-12 col-md-6">
+                         <label for="prenom">Téléphone *</label>
+                         <input
+                           formControlName="telephone"
+                           class="form-control"
+                           [ngClass]="{
+                             'is-invalid': submitted && detailsUserFormControl.telephone.errors
+                           }"
+                         />
+                        </div>
+                       </div>
+                        <!-- Adresse -->
+                        <div class="form-group">
+                           <label for="prenom">Adresse *</label>
+                           <input
+                             formControlName="adresse"
+                             class="form-control"
+                             [ngClass]="{
+                               'is-invalid': submitted && detailsUserFormControl.adresse.errors
+                             }"
+                           />
+                          </div>
+                     <div class="form-group row">
+                       <div class="offset-lg-2"></div>
+                       <div class="col-lg-5 "><button [disabled]="detailsUserFormControl.touched &&  detailsUserFormControl.errors=== null" (click)="enregistrer()" matButton type="submit" class="btn dahira-button-valider">Enregistrer</button></div>
+                       <div class="col-lg-5"> <button  matButton type="submit" class="btn dahira-button-quitter">Annuler</button></div>
+                     </div>
+                     <div *ngIf="error" class="alert alert-danger">{{ error }}</div>
+                   </form>
+                  </mat-card>
+     </mat-expansion-panel> <br/>
+      <mat-expansion-panel>
+          <mat-expansion-panel-header>
+              <strong>Ajouter ou modifier les missions</strong>
+           </mat-expansion-panel-header>
+        <mat-card>
+
+        </mat-card>
+
+      </mat-expansion-panel>
+</div>

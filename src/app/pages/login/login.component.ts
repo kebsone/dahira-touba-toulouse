@@ -97,7 +97,8 @@ export class LoginComponent implements OnInit {
           const jwt = response.headers.get('Authorization');
           this.dahiraService.saveToken(jwt);
         this._snackBar.open('Connexion réussi', 'X', this.snackbarConfigSuccess);
-          this.router.navigateByUrl('/');
+        this.router.navigateByUrl('/acceuil');
+        window.location.reload(); // pour que le header puisse recharger le current user
         },
         (error: HttpErrorResponse) => {
           if (error) {
@@ -107,10 +108,8 @@ export class LoginComponent implements OnInit {
   }
 
   inscrire() {
-    console.log(this.inscriptionForm.value);
     const user = this.createUser();
     this.dahiraService.saveUser(user).subscribe(data => {
-     console.log('retour de la creaion', data);
    });
   }
 

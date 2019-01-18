@@ -32,7 +32,7 @@ export class SlideshowComponent implements DoCheck {
   @Input() showArrows = true;
   @Input() disableSwiping = false;
   @Input() autoPlay = false;
-  @Input() autoPlayInterval = 3333;
+  @Input() autoPlayInterval = 5000;
   @Input() stopAutoPlayOnSlide = true;
   @Input() autoPlayWaitForLazyLoad = false;
   @Input() debug = false;
