@@ -102,7 +102,7 @@ export class LoginComponent implements OnInit {
         },
         (error: HttpErrorResponse) => {
           if (error) {
-            this._snackBar.open('Vérifiez votre mail et mot de passe', 'X', this.snackbarConfigError);
+            this._snackBar.open('Vérifiez votre mail et mot de passe', 'x', this.snackbarConfigError);
           }
         });
   }
