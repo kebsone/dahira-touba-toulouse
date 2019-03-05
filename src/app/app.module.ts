@@ -41,6 +41,7 @@ import { DahiraScrolTopComponent } from './theme/dahira-scrol-top/dahira-scrol-t
 import {MatDividerModule} from '@angular/material/divider';
 import { SlideshowComponent } from './slideshow/slideshow.component';
 import { DetailMemberComponent } from './pages/detail-member/detail-member.component';
+import { TestAngSchemaComponent } from './khalif/test-ang-schema/test-ang-schema.component';
 
 const routes: Routes = [
   { path: '', redirectTo: 'accueil', pathMatch: 'full' },
@@ -73,7 +74,8 @@ const routes: Routes = [
     PreHeaderComponent,
     DahiraScrolTopComponent,
     SlideshowComponent,
-    DetailMemberComponent
+    DetailMemberComponent,
+    TestAngSchemaComponent
 
   ],
   imports: [
