@@ -47,6 +47,8 @@ export class LoginComponent implements OnInit {
 
 
   get loginFormContrl() {
+    console.log(this.loginForm);
+    
     return this.loginForm.controls;
   }
 
@@ -87,6 +89,8 @@ export class LoginComponent implements OnInit {
       return;
     }
     this.loading = true;
+    console.log(this.loginFormContrl);
+    
     this.dahiraService
       .login(
         this.loginFormContrl.mail.value,
